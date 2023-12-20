@@ -13,7 +13,7 @@ public class App {
 		while(true) {
 			System.out.print("명령어 ) ");
 			String cmd = sc.nextLine().trim();
-			
+
 			if(cmd.equals("종료")) {
 				break;
 			}
