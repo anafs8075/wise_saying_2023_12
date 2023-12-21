@@ -32,11 +32,11 @@ public class WiseSayingController {
 				System.out.printf("%d  /  %s  /  %s\n", ws.getId(), ws.getAuthor(), ws.getContent());
 			}
 		}
-
 	}
 
 	public void remove() {
 
+		
 	}
 
 }
