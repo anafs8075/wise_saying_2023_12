@@ -28,7 +28,7 @@ public class WiseSayingController {
 		if (wiseSayings.size() == 0) {
 			System.out.println("등록 된 명언이 없어");
 		} else {
-			System.out.println("번호  /  작가  /  명언  ");
+			System.out.println("번호  /  작가   /  명언  ");
 			System.out.println("=".repeat(30));
 			for (int i = wiseSayings.size() - 1; i >= 0; i--) {
 				WiseSaying ws = wiseSayings.get(i);
@@ -40,13 +40,9 @@ public class WiseSayingController {
 
 
 	public void remove(Rq rq) {
-		int id = -1;
-
-		try {
-			id = Integer.parseInt(rq.getParam("id"));
-			System.out.println(id);
-		} catch (NumberFormatException e) {
-			System.out.printf("id(정수)를 제대로 입력해주세요\n", id);
+		int id = rq.getIntParam("id", -1);
+		if (id == -1) {
+			System.out.println("id(정수)를 제대로 입력해주세요");
 			return;
 		}
 
